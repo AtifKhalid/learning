@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="ec_downloads_items_save_before">
+        <observer name="item_save_listner" instance="EC\Downloads\Observer\Item\SaveListner"/>
+    </event>
+    <!--<event name="ec_downloads_items_load_after">-->
+        <!--<observer name="item_load_listner" instance="EC\Downloads\Observer\Item\LoadListner"/>-->
+    <!--</event>-->
+</config>

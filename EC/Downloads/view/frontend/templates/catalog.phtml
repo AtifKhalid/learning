@@ -1,0 +1,50 @@
+<?php
+$categories = $block->getCategoryCollection();
+?>
+<div class="box-model cav-downloads-box">
+    <div class="box-wrapper">
+        <div class="box-contents downloads-box">
+			<div class="down-p-specs">
+				<div class="title">
+					<h2>Download Product Specs:</h2>
+				</div>
+				<div class="p-spec-desc">
+					<?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Search::form.mini.downloads.phtml")->toHtml(); ?>
+				</div>
+			</div>
+            <?php foreach ($categories as $key => $value): ?>
+                <div class="catalog">
+                    <div class="title">
+                        <h2><?php echo $value->getTitleCategory(); ?></h2>
+                    </div>
+                        <?php $itemsCollection = $block->getItemCollection()->addFieldToFilter('downloadcategories_id', array(array('finset' => array($value->getId()))));?>
+                        <?php if ($itemsCollection->count() > 0):?>
+                            <div class="lists catalog-lists">
+                                <?php foreach ($itemsCollection as $key1 => $value1): ?>
+                                    <div class="list catalog-list">
+                                        <?php
+                                        if ($value1->getLink() != '')
+                                            $url = $value1->getLink();
+                                        elseif ($value1->getDisplay() == 1)
+                                            $url = $block->getFileUrl() . $value1->getFilename();
+                                        else
+                                            $url = $this->getUrl('downloads/index/downloads') . '?file=' . $value1->getFilename();
+                                        ?>
+                                        <div class="list-top">
+                                            <a target="_blank" href="<?php echo $url; ?>">
+                                                <img src="<?php echo $block->getImageUrl() . $value1->getImage(); ?>"/>
+                                            </a>
+                                        </div>
+                                        <div class="list-bottom">
+                                            <p><?php echo $value1->getTitle();?></p>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+

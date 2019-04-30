@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mag_Form::form" title="Web Form" module="Mag_Form" sortOrder="51" resource="Mag_Form::form"/>
+        <add id="Mag_Form::index" title="Form" module="Mag_Form" sortOrder="10" action="form/index/index" resource="Mag_Form::form" parent="Mag_Form::form"/>
+        
+    </menu>
+</config>
+

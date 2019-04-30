@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Express Commerce, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="downloads" resource="default" engine="innodb" comment="Downloads">
+        <column xsi:type="int" name="downloads_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Downloads Id"/>
+        <column xsi:type="varchar" name="title" length="255" default="" nullable="false" comment="Title"/>
+        <column xsi:type="varchar" name="image" nullable="false" default="" length="255" comment="Image"/>
+        <column xsi:type="varchar" name="filename" nullable="false" default="" length="255" comment="File Name"/>
+        <column xsi:type="varchar" name="link" nullable="false" default="" length="255" comment="Link"/>
+        <column xsi:type="int" name="sort_order" nullable="false" comment="Sort Order"/>
+        <column xsi:type="tinyint" name="display" comment="Display"/>
+        <column xsi:type="varchar" name="downloadcategories_id" comment="Download Category Id"/>
+        <column xsi:type="smallint" name="status" nullable="false" default="0" comment="Status"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="downloads_id"/>
+        </constraint>
+    </table>
+    <table name="downloadcategories" resource="default" engine="innodb" comment="Download Categories">
+        <column xsi:type="int" name="downloadcategories_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Download Category Id"/>
+        <column xsi:type="varchar" name="title_category" length="255" default="" nullable="false" comment="Title Category"/>
+        <column xsi:type="text" name="description" nullable="false" comment="Description"/>
+        <column xsi:type="int" name="sort_order" nullable="false" comment="Sort Order"/>
+        <column xsi:type="smallint" name="status" nullable="false" default="0" comment="Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="downloadcategories_id"/>
+        </constraint>
+    </table>
+</schema>

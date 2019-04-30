@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <virtualType name="EC_Items_ImageUploader" type="EC\Downloads\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">EC/Downloads/items/images/temp</argument>
+            <argument name="basePath" xsi:type="string">EC/Downloads/items/images</argument>
+            <!--<argument name="allowedExtensions" xsi:type="array">-->
+                <!--<item name="jpg" xsi:type="string">jpg</item>-->
+                <!--<item name="jpeg" xsi:type="string">jpeg</item>-->
+                <!--<item name="gif" xsi:type="string">gif</item>-->
+                <!--<item name="png" xsi:type="string">png</item>-->
+            <!--</argument>-->
+            <argument name="allowedExtensions" xsi:type="array">false</argument>
+        </arguments>
+    </virtualType>
+    <type name="EC\Downloads\Controller\Adminhtml\Items\Uploadimage">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">EC_Items_ImageUploader</argument>
+        </arguments>
+    </type>
+    <virtualType name="EC_Items_FileUploader" type="EC\Downloads\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">EC/Downloads/items/files/temp</argument>
+            <argument name="basePath" xsi:type="string">EC/Downloads/items/files</argument>
+            <argument name="allowedExtensions" xsi:type="array">false</argument>
+        </arguments>
+    </virtualType>
+    <type name="EC\Downloads\Controller\Adminhtml\Items\Uploadfile">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">EC_Items_FileUploader</argument>
+        </arguments>
+    </type>
+    <type name="EC\Downloads\Controller\Adminhtml\Items\Save">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">EC_Items_FileUploader</argument>
+        </arguments>
+    </type>
+</config>

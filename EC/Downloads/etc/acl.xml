@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="EC_Base::config">
+                    <resource id="EC_Downloads::base" title="Downloads" sortOrder="10">
+                        <resource id="EC_Downloads::configs" title="Configurations" sortOrder="10" >
+                            <resource id="EC_Downloads::categories" title="Categories" sortOrder="1" />
+                            <resource id="EC_Downloads::items" title="Items" sortOrder="1" />
+                            <resource id="EC_Downloads::reports" title="Reports" sortOrder="1" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

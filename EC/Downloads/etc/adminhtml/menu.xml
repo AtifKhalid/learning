@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="EC_Downloads::configs" parent="EC_Base::config" title="Downloads" module="EC_Downloads" sortOrder="1" resource="EC_Downloads::configs"/>
+        <add id="EC_Downloads::items" parent="EC_Downloads::configs" title="Manage Items" module="EC_Downloads" sortOrder="1" resource="EC_Downloads::items" action="downloads/index/items" />
+        <add id="EC_Downloads::categories" parent="EC_Downloads::configs" title="Manage Categories" module="EC_Downloads" sortOrder="1" resource="EC_Downloads::categories" action="downloads/index/categories" />
+        <add id="EC_Downloads::reports" parent="EC_Downloads::configs" title="Manage Attachment Sizes" module="EC_Downloads" sortOrder="1" resource="EC_Downloads::categories" action="downloads/index/reports" />
+    </menu>
+</config>

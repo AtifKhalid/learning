@@ -1,0 +1,25 @@
+<div class="file-uploader-summary">
+    <div class="file-uploader">
+        <a attr="href: $file.url" target="_blank">
+            <!-- ko if: $file.name -->
+                <div class="file-uploader-filename" text="$file.name"></div>
+            <!-- /ko -->
+            <!-- ko ifnot: $file.name-->
+                <div class="file-uploader-filename">Download File</div>
+            <!-- /ko -->
+        </a>
+        <div class="actions">
+            <button
+                    type="button"
+                    class="action-remove"
+                    data-role="delete-button"
+                    attr="title: $t('Delete image')"
+                    click="$parent.removeFile.bind($parent, $file)">
+                <span translate="'Delete File'"/>
+            </button>
+        </div>
+    </div>
+    <div class="file-uploader-meta">
+        <text args="$file.previewWidth"/><text args="$file.previewHeight"/>
+    </div>
+</div>

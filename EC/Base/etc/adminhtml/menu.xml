@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="EC_Base::config" title="Express Commerce" module="EC_Base" sortOrder="15" resource="EC_Base::config"/>
+    </menu>
+</config>
